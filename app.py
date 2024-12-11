@@ -1,5 +1,11 @@
         # cadastro DE USUÁRIO E SENHA
        # MENU PRINCIPAL
+#declarar função 
+def validar_senha ():
+     senha = input("digite sua senha")
+     if senha == senha:
+          return True #RETORNA VERDADEIRO 
+
 saldo = 0.0  #variável que guarda o saldo do usuário
 while True:
     print("Bem vindo! \n digite 1.cadastrar 2.login 3. encerrar")
@@ -30,24 +36,23 @@ while True:
                 elif escolha_principal == 2: #SAQUE 
                     valor_saque = float(input("digite o valor do saque"))
                     senha_saque = input("digite sua senha:")
-                    if senha_saque == senha:
+                    if validar_senha():
                          saldo = saldo - valor_saque #subtrai o valor do saldo 
                     elif escolha_principal == 3:  
-                         valor_pix = float(input("digite o valor do pix"))    
-                         senha_pix = input("digite sua senha")    
-                         if senha_pix == senha:
+                         valor_pix = float(input("digite o valor do pix"))        
+                         if validar_senha(): 
                               saldo = saldo - valor_pix 
                          else:
                               print("senha incorreta")
                 elif escolha_principal == 4:  #se usuário escolher visualizar 
-                     senha_extrato = input("digite sua senha")
-                     if senha_extrato == senha:
+                    
+                     if validar_senha(): 
                           print("extrato: ", saldo)  
                      else:
                           print("senha incorreta") 
                 elif escolha_principal == 5:  #ENCERRAR
                      senha_encerrar = input("digite sua senha")
-                     if senha_encerrar == senha:
+                     if validar_senha():
                           break
                      else:
                           print("senha incorreta")      
